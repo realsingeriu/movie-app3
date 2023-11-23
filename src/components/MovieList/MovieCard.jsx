@@ -4,7 +4,7 @@ import Star from '../../assets/star.png';
 
 export default function MovieCard({movie}) {
 	return (
-		<a href={`https://www.themoviedb.org/movie/${movie.id}?language=ko`} className='movie_card' target='_blank' rel='noopener noreferrer'>
+		<a href={`https://www.themoviedb.org/movie/${movie.id}?language=ko`} className='movie_card' target='_blank'>
 			<img
 				src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
 				alt='movie poster'
@@ -16,12 +16,12 @@ export default function MovieCard({movie}) {
 				<div className='align_center movie_date_rate'>
 					<p>{movie.release_date}</p>
 					<p className='align_center'>
-						{movie.vote_average}
+						{movie.vote_average.toFixed(2)}
 						<img src={Star} alt='rating icon' className='card_emoji' />
 					</p>
 				</div>
 				<p className='movie_description'>
-          {movie.overview.slice(0, 200) + '...'}</p>
+          {movie.overview.slice(0, 100) + '...'}</p>
 			</div>
 		</a>
 	);

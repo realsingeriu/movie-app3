@@ -5,7 +5,7 @@ import _ from 'lodash';
 import MovieCard from "./MovieCard";
 import { useEffect, useState } from "react";
 
-export default function MovieList({ type, title, emoji, moviesProp }) {
+export default function MovieList({ type, title, emoji }) {
   const [movies, setMovies] = useState([])
   const [filterMovies, setFilterMovies] = useState([]);
 	const [minRating, setMinRating] = useState(0);
@@ -33,7 +33,7 @@ export default function MovieList({ type, title, emoji, moviesProp }) {
     setFilterMovies(filtered);
 		}
   }
-    const handleSort = (e) => {
+    function handleSort(e) {
 		const { name, value } = e.target;
 		setSort((prev) => ({ ...prev, [name]: value }));
 	  };

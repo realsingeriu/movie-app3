@@ -4,7 +4,7 @@ import Party from '../../assets/partying-face.png';
 import './Navbar.css';
 import DarkMode from '../DarkMode/DarkMode';
 import SearchBox from '../MovieList/SearchBox';
-import { useEffect, useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default function Navbar(props) {
